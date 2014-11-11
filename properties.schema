@@ -1,0 +1,42 @@
+{
+  "type":"object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "properties":{
+    "_graphic": {
+      "type":"object",
+      "required":false,
+      "properties":{
+        "alt": {
+          "type":"string",
+          "required":false
+        },
+        "title": {
+          "type":"string",
+          "required":false
+        },
+        "large": {
+          "type":"string",
+          "required":true
+        },
+        "medium": {
+          "type":"string",
+          "required":true
+        },
+        "small": {
+          "type":"string",
+          "required":true
+        },
+        "_maxBodyCharacters": {
+          "type":"number",
+          "required":false
+        },
+        "moreText": {
+          "type":"string",
+          "required":false
+        }
+      }
+    }
+  }
+}

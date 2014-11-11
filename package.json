@@ -1,0 +1,23 @@
+{
+  "name": "adapt-textPlus",
+  "version": "0.0.1",
+  "description": "A presentation component with graphic and content popups for use with mobile devices.",
+  "main": "",
+  "scripts": {
+    "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/chucklorenz/adapt-textPlus.git"
+  },
+  "author": "Chuck Lorenz",
+  "license": "GPL v3",
+  "bugs": {
+    "url": "https://github.com/chucklorenz/adapt-textPlus/issues"
+  },
+  "devDependencies": {
+    "karma": "0.10",
+    "karma-mocha": "0.1.0",
+    "karma-expect": "1.1.0"
+  }
+}

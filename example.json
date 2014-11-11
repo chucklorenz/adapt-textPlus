@@ -1,0 +1,21 @@
+{
+    "_id":"c-05",
+    "_parentId":"b-05",
+    "_type":"component",
+    "_component":"textPlus",
+    "_classes":"",
+    "_layout":"left",
+    "title":"A look at adapt-textPlus",
+    "displayTitle":"A look at adapt-textPlus",
+    "body":"This is a presentation component based on the adapt core text component, with two modifications: an optional graphic and the ability to use popups to present lengthy content when device screenSize is small.<br><br>The graphic element allows for optimization for various devices, swapping out images based on screen size.<br><br>When the device screen size is small, popups can be invoked by setting '_maxBodyCharacters' to a number less than the body's total character count.",
+    "instruction":"",
+    "_graphic": {
+        "alt": "alt text",
+        "title": "title text",
+        "large": "course/en/images/origami-hotgraphic.jpg",
+        "medium": "course/en/images/origami-menu-three.jpg",
+        "small": "course/en/images/origami-birds-blue.jpg"
+    },
+    "_maxBodyCharacters": 100,
+    "moreText": "More"
+}

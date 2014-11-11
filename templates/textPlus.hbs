@@ -1,0 +1,64 @@
+<div class="textPlus-inner component-inner">
+    {{#if _graphic}}
+        <div class="textPlus-graphic">
+            <div class="textPlus-graphic-inner">
+                <img src="{{_graphic.src}}" alt="{{_graphic.alt}}" title="{{_graphic.title}}" data-large="{{_graphic.large}}" data-medium="{{_graphic.medium}}" data-small="{{_graphic.small}}"/>
+            </div>
+        </div>
+    {{/if}}
+    {{#if displayTitle}}
+        <div class="textPlus-title component-title">
+            <h4 class="textPlus-title-inner component-title-inner">
+                {{{displayTitle}}}
+            </h4>
+        </div>
+    {{/if}}
+    {{#if body}}
+        <div class="textPlus-body component-body">
+            <div class="textPlus-body-inner component-body-inner">
+                <span class="textPlus-long {{#if _displayShortText }}textPlus-hidden{{/if}}">
+                    {{{body}}}
+                </span>
+                <span class="textPlus-short {{#unless _displayShortText }}textPlus-hidden{{/unless}}">
+                    {{{body-short}}}
+                    <a href="#" class="textPlus-popup-open" tabindex="-1">
+                        <div class="textPlus-link-text">
+                            {{#if moreText}}
+                                {{moreText}}
+                            {{else}}
+                                More
+                            {{/if}}
+                        </div>
+                    </a>
+                </span>
+            </div>
+        </div>
+    {{/if}}
+    {{#if instruction}}
+        <div class="textPlus-instruction component-instruction">
+            <div class="textPlus-instruction-inner component-instruction-inner">
+                {{{instruction}}}
+            </div>
+        </div>
+    {{/if}}
+    <div class="textPlus-popup textPlus-hidden">
+        <div class="textPlus-popup-inner">
+            <div class="textPlus-popup-toolbar">
+                <div class="textPlus-popup-toolbar-inner clearfix">
+                    <a href="#" class="textPlus-popup-close">
+                        <div class="icon icon-cross"></div>
+                    </a>
+                </div>
+            </div>
+            <div class="textPlus-popup-content-inner">
+                <div class="textPlus-popup-content">
+                    <div class="textPlus-popup-content-inner">
+                        {{#if body}}
+                            {{{body}}}
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

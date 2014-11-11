@@ -1,0 +1,22 @@
+{
+  "name": "adapt-textPlus",
+  "version": "0.0.1",
+  "homepage": "https://github.com/chucklorenz/adapt-textPlus",
+  "authors": [
+    "Chuck Lorenz <chucklorenz@yahoo.com>"
+  ],
+  "displayName" : "TextPlus",
+  "component" : "textPlus",
+  "assetFields" : [
+    "_items[]._graphic.small",
+    "_items[]._graphic.medium",
+    "_items[]._graphic.large"
+  ],
+  "description": "A presentation component based on the adapt core contributed text component, with two modifications: an optional graphic and the ability to use popups when screensize is small.",
+  "main": "/js/adapt-textPlus.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-component"
+  ],
+  "license": "GPLv3"
+}
