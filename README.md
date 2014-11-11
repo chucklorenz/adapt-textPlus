@@ -19,7 +19,7 @@ This is a presentation component with optional graphic, displayTitle, body, and 
 
 ##Settings overview
 
-An complete example of this components settings can be found in the [example.json](placeholder) file. A description of the core settings can be found at: [Core model attributes](https://github.com/adaptlearning/adapt_framework/wiki/Core-model-attributes)
+An complete example of this components settings can be found in the [example.json](https://github.com/chucklorenz/adapt-textPlus/blob/master/example.json) file. A description of the core settings can be found at: [Core model attributes](https://github.com/adaptlearning/adapt_framework/wiki/Core-model-attributes)
 
 ####_component
 
