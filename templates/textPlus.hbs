@@ -19,7 +19,7 @@
                 <span class="textPlus-long {{#if _displayShortText }}textPlus-hidden{{/if}}">
                     {{{body}}}
                 </span>
-                <span class="textPlus-short {{#unless _displayShortText }}textPlus-hidden{{/unless}}">
+                <span class="textPlus-short{{#unless _displayShortText }} textPlus-hidden{{/unless}}">
                     {{{body-short}}}
                     <a href="#" class="textPlus-popup-open" tabindex="-1">
                         <div class="textPlus-link-text">
@@ -50,13 +50,11 @@
                     </a>
                 </div>
             </div>
-            <div class="textPlus-popup-content-inner">
-                <div class="textPlus-popup-content">
-                    <div class="textPlus-popup-content-inner">
-                        {{#if body}}
-                            {{{body}}}
-                        {{/if}}
-                    </div>
+            <div class="textPlus-popup-content">
+                <div class="textPlus-popup-content-inner">
+                    {{#if body}}
+                        {{{body}}}
+                    {{/if}}
                 </div>
             </div>
         </div>
