@@ -17,5 +17,6 @@
         "small": "course/en/images/origami-birds-blue.jpg"
     },
     "_maxBodyCharacters": 100,
-    "moreText": "More"
+    "moreText": "More",
+    "_isResetOnRevisit": false
 }

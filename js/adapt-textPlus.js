@@ -1,8 +1,8 @@
 /*
-* adapt-textPlus
-* License - http://github.com/adaptlearning/adapt_framework/LICENSE
-* Code is based on adapt-contrib-text, adapt-contrib-graphic, and adapt-contrib-reveal.
-*/
+ * adapt-textPlus
+ * License - http://github.com/adaptlearning/adapt_framework/LICENSE
+ * Code is based on adapt-contrib-text, adapt-contrib-graphic, and adapt-contrib-reveal.
+ */
 define(function(require) {
 
     var ComponentView = require('coreViews/componentView');
@@ -28,7 +28,20 @@ define(function(require) {
             this.listenTo(Adapt, 'device:changed', this.setDeviceSize, this);
             this.listenTo(Adapt, 'device:changed', this.resizeImage);
             this.listenTo(Adapt, 'device:resize', this.setDeviceSize, this);
+            this.checkIfResetOnRevisit();
             this.setDeviceSize();
+        },
+
+        // Used to check if the text should reset on revisit
+        checkIfResetOnRevisit: function() {
+            var isResetOnRevisit = this.model.get('_isResetOnRevisit');
+            // If reset is enabled set defaults
+            if (isResetOnRevisit) {
+                this.model.set({
+                    _isEnabled: true,
+                    _isComplete: false
+                });
+            }
         },
 
         setDeviceSize: function() {
@@ -58,7 +71,8 @@ define(function(require) {
                 this.setReadyStatus();
             }
             // Check if instruction or body is set, otherwise force completion
-            var cssSelector = this.$('.component-instruction').length > 0 ? '.component-instruction' 
+            var cssSelector = this.$('.component-instruction').length > 0
+                ? '.component-instruction'
                 : (this.$('.component-body').length > 0 ? '.component-body' : null);
 
             if (!cssSelector) {
@@ -106,17 +120,17 @@ define(function(require) {
                     this._isVisibleBottom = true;
                 }
 
-                if (this._isVisibleTop && this._isVisibleBottom) {                   
+                if (this._isVisibleTop && this._isVisibleBottom) {
                     this.$(this.model.get('cssSelector')).off('inview');
                     this.setCompletionStatus();
                 }
             }
         }
-        
+
     });
-    
+
     Adapt.register("textPlus", TextPlus);
 
     return TextPlus;
-    
+
 });
