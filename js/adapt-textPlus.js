@@ -100,6 +100,7 @@ define(function(require) {
             this.$('.textPlus-popup-inner').css('height', $(window).height() - (outerMargin * 2) - (innerPadding * 2));
             this.$('.textPlus-popup').removeClass('textPlus-hidden');
             this.$('.textPlus-popup-content').css('height', (this.$('.textPlus-popup-inner').height() - toolBarHeight));
+            Adapt.trigger('popup:opened');
         },
 
         closePopup: function (event) {
@@ -107,6 +108,7 @@ define(function(require) {
             this.$('.textPlus-popup-close').blur();
             this.$('.textPlus-popup-content').addClass('textPlus-hidden');
             this.$('.textPlus-popup').addClass('textPlus-hidden');
+            Adapt.trigger('popup:closed');
         },
 
         inview: function(event, visible, visiblePartX, visiblePartY) {
