@@ -10,7 +10,7 @@ define(function(require) {
 
     var TextPlus = ComponentView.extend({
 
-        events: function () {
+        events: function() {
             return Adapt.device.touch == true ? {
                 'inview' : 'inview',
                 'touchstart .textPlus-popup-open' : 'openPopup',
@@ -24,7 +24,7 @@ define(function(require) {
             }
         },
 
-        preRender: function () {
+        preRender: function() {
             this.listenTo(Adapt, 'device:changed', this.setDeviceSize, this);
             this.listenTo(Adapt, 'device:changed', this.resizeImage);
             this.listenTo(Adapt, 'device:resize', this.setDeviceSize, this);
@@ -91,7 +91,7 @@ define(function(require) {
             }, this));
         },
 
-        openPopup: function (event) {
+        openPopup: function(event) {
             event.preventDefault();
             var outerMargin = parseFloat(this.$('.textPlus-popup-inner').css('margin'));
             var innerPadding = parseFloat(this.$('.textPlus-popup-inner').css('padding'));
@@ -103,7 +103,7 @@ define(function(require) {
             Adapt.trigger('popup:opened');
         },
 
-        closePopup: function (event) {
+        closePopup: function(event) {
             event.preventDefault();
             this.$('.textPlus-popup-close').blur();
             this.$('.textPlus-popup-content').addClass('textPlus-hidden');
@@ -131,7 +131,7 @@ define(function(require) {
 
     });
 
-    Adapt.register("textPlus", TextPlus);
+    Adapt.register('textPlus', TextPlus);
 
     return TextPlus;
 
