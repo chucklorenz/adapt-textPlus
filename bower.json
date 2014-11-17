@@ -8,9 +8,9 @@
   "displayName" : "TextPlus",
   "component" : "textPlus",
   "assetFields" : [
-    "_items[]._graphic.small",
-    "_items[]._graphic.medium",
-    "_items[]._graphic.large"
+    "_graphic.small",
+    "_graphic.medium",
+    "_graphic.large"
   ],
   "description": "A presentation component based on the adapt core contributed text component, with two modifications: an optional graphic and the ability to use popups when screensize is small.",
   "main": "/js/adapt-textPlus.js",
