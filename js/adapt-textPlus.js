@@ -134,7 +134,7 @@ define(function(require) {
 
     });
 
-    Adapt.register("textPlus", TextPlus);
+    Adapt.register('textPlus', TextPlus);
 
     return TextPlus;
 
