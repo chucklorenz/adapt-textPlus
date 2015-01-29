@@ -33,7 +33,7 @@ define(function(require) {
         // Used to check if the text should reset on revisit
         checkIfResetOnRevisit: function() {
             var isResetOnRevisit = this.model.get('_isResetOnRevisit');
-            // If reset is enabled set defaults
+            // If reset is enabled then state and model attributes should be reset to default.
             if (isResetOnRevisit) {
                 this.model.set({
                     _isEnabled: true,
