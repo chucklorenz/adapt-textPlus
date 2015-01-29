@@ -69,6 +69,7 @@ define(function(require) {
             } else {
                 this.setReadyStatus();
             }
+
             // If the screenSize is forcing popups, then completion will be set by
             // opening the popup. Otherwise...
             if (this.model.get('_displayShortText') === false) {
@@ -82,6 +83,7 @@ define(function(require) {
                 } else {
                     this.model.set('cssSelector', cssSelector);
                     this.$(cssSelector).on('inview', _.bind(this.inview, this));
+                    this.listenTo(this.model, 'change:_isComplete', this.removeInviewListener);
                 }
             }
         },
@@ -130,6 +132,17 @@ define(function(require) {
                     this.setCompletionStatus();
                 }
             }
+        },
+
+        removeInviewListener: function(model, changeAttribute) {
+            if (changeAttribute) {
+                this.$(this.model.get('cssSelector')).off('inview');
+            }
+        },
+
+        remove: function() {
+            this.$(this.model.get('cssSelector')).off('inview');
+            Backbone.View.prototype.remove.apply(this, arguments);
         }
 
     });
