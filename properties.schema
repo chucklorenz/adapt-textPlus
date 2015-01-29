@@ -4,39 +4,99 @@
   "id": "http://jsonschema.net",
   "$ref": "http://localhost/plugins/content/component/model.schema",
   "properties":{
+    "_supportedLayout": {
+        "type": "string",
+        "required": true,
+        "enum": ["full-width", "half-width", "both"],
+        "default": "both",
+        "editorOnly": true
+    },
+    "instruction": {
+        "type": "string",
+        "required": false,
+        "default": "",
+        "title":"Instruction",
+        "inputType": "Text",
+        "validators": [],
+        "help": "This is the instruction text"
+    },
     "_graphic": {
       "type":"object",
       "required":false,
+      "title": "Graphic",
       "properties":{
         "alt": {
+          "title":"Image Alt",
           "type":"string",
-          "required":false
+          "required":false,
+          "default": "",
+          "inputType": "Text",
+          "validators": [],
+          "help": "The alternative text for this image"
         },
         "title": {
+          "title":"Image Title",
           "type":"string",
-          "required":false
+          "required":false,
+          "default": "",
+          "inputType": "Text",
+          "validators": [],
+          "help": "The tile text for this image"
         },
         "large": {
+          "title":"Image: Large",
           "type":"string",
-          "required":true
+          "required":true,
+          "default": "",
+          "inputType": "Asset:image",
+          "validators": ["required"],
+          "help": "The large sized image for desktop devices"
         },
         "medium": {
+          "title":"Image: Medium",
           "type":"string",
-          "required":true
+          "required":true,
+          "default": "",
+          "inputType": "Asset:image",
+          "validators": ["required"],
+          "help": "The medium sized image for tablet devices"
         },
         "small": {
+          "title":"Image: Small",
           "type":"string",
-          "required":true
-        },
-        "_maxBodyCharacters": {
-          "type":"number",
-          "required":false
-        },
-        "moreText": {
-          "type":"string",
-          "required":false
+          "required":true,
+          "default": "",
+          "inputType": "Asset:image",
+          "validators": ["required"],
+          "help": "The small sized image for mobile devices"
         }
       }
+    },
+    "_maxBodyCharacters": {
+        "title":"Maximum Body Characters",
+        "type":"number",
+        "required":false,
+        "default": "",
+        "inputType": "Text",
+        "validators": [],
+        "help": "A number that specifies how many characters will be displayed before"
+    },
+    "moreText": {
+      "title":"More Text Phrase",
+      "type":"string",
+      "required":false,
+      "default": "",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Word/s that indicate that the text has been truncated and that activate the pop-up"
+    },
+    "_isResetOnRevisit":{
+        "type":"boolean",
+        "required":true,
+        "default": "false",
+        "inputType": {"type": "Select", "options":["true", "false"]},
+        "validators": ["required"],
+        "help": "Choose 'true' to return the component to its default state when the user revisits it."
     }
   }
 }
